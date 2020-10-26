@@ -1,0 +1,18 @@
+from pizzapi import *
+
+customer = Customer('Nolan', 'Trapp', 'officialstackemup@gmail.com', '9513034347')
+address = Address('45151 Sagewind CT', 'Temecula', 'CA', '92592')
+
+store = address.closest_store()
+menu = store.get_menu()
+
+#menu.search(Name='Sprite')
+
+order = Order(store, customer, address)
+order.add_item('12SCREEN') # add a 12-inch cheese pizza
+order.add_item('2LSPRITE') # add a 2-Liter Sprite
+
+
+card = PaymentObject('4815820151791629', '0122', '839', '92592')
+
+print("Order Placed!")
